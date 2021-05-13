@@ -12,25 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 @EnableFeignClients
-@Controller
-//public class NameApplication implements CommandLineRunner{
 public class NameApplication{
-	
-	@Autowired
-	private PessoaService pessoaService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(NameApplication.class, args);
 	}
-	
-	@RequestMapping("/")
-    public String greeting(ModelMap model) {
-        model.addAttribute("greeting", pessoaService.busca());
-        return "home";
-    }
-
-//	@Override
-//	public void run(String... args) throws Exception {
-//		System.out.println(pessoaService.busca());
-//	}
 }
