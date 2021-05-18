@@ -18,17 +18,17 @@ public class PessoaController {
 	private PessoaService pessoaService;
 
 	@RequestMapping("/")
-    public String greetingMaria(ModelMap model) {
-		Pessoa data = pessoaService.buscaMaria();
+    	public String greetingMaria(ModelMap model) {
+	Pessoa data = pessoaService.buscaMaria();
         model.addAttribute("pessoa", data.getName());
         model.addAttribute("age", data.getAge());
         return "home";
     }
 	
 	@RequestMapping("/busca")
-    public String greetingName(ModelMap model, String name) {
-		Pessoa data = pessoaService.buscaNome(name);
-		model.addAttribute("pessoa", data.getName());
+   	public String greetingName(ModelMap model, String name) {
+	Pessoa data = pessoaService.buscaNome(name);
+	model.addAttribute("pessoa", data.getName());
         model.addAttribute("age", data.getAge());
         return "home";
     }
