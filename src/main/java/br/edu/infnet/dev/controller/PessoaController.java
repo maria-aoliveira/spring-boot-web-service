@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.edu.infnet.dev.models.Pessoa;
 import br.edu.infnet.dev.service.PessoaService;
 
 @Controller
@@ -17,9 +18,18 @@ public class PessoaController {
 	private PessoaService pessoaService;
 
 	@RequestMapping("/")
-    public String greeting(ModelMap model) {
-        model.addAttribute("greeting", pessoaService.busca());
+    public String greetingMaria(ModelMap model) {
+		Pessoa data = pessoaService.buscaMaria();
+        model.addAttribute("pessoa", data.getName());
+        model.addAttribute("age", data.getAge());
         return "home";
     }
-
+	
+	@RequestMapping("/busca")
+    public String greetingName(ModelMap model, String name) {
+		Pessoa data = pessoaService.buscaNome(name);
+		model.addAttribute("pessoa", data.getName());
+        model.addAttribute("age", data.getAge());
+        return "home";
+    }
 }

@@ -41,10 +41,10 @@ public class Pessoa {
 		this.count = count;
 	}
 
-	@Override
-	public String toString() {
-		return "Pessoas [name=" + name + ", age=" + age + ", count=" + count + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Pessoas [name=" + name + ", age=" + age + ", count=" + count + "]";
+//	}
 
 	public Pessoa() {
 		
